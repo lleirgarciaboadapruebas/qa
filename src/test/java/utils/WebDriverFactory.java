@@ -38,7 +38,7 @@ public class WebDriverFactory {
     	String driverPath = "src/test/resources"+File.separator;
     	if(SystemUtils.IS_OS_MAC_OSX) driverPath += "chromedriver-mac";
     	else if(SystemUtils.IS_OS_WINDOWS) driverPath += "chromedriver.exe"; 
-    	else if(SystemUtils.IS_OS_LINUX) driverPath += "chromedriver-linux32";
+    	else if(SystemUtils.IS_OS_LINUX) driverPath += "chromedriver";
     	
     	System.setProperty("webdriver.chrome.driver", driverPath);
     	

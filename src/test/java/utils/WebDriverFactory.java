@@ -52,7 +52,7 @@ public class WebDriverFactory {
     	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 //        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102/"), capabilities);
 
-        // Selenium selenium = new DefaultSelenium("localhost", 4444, "*firefox", "http://my.test.site.org/");
+        // Selenium selenium = new DefaultSeleniu  m("localhost", 4444, "*firefox", "http://my.test.site.org/");
 
 
         WebDriver driver = null;

@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class WebDriverFactory {
@@ -49,7 +50,18 @@ public class WebDriverFactory {
     	options.addArguments("--start-maximized");
     	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
     	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102/"), capabilities);
+//        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102/"), capabilities);
+
+        // Selenium selenium = new DefaultSelenium("localhost", 4444, "*firefox", "http://my.test.site.org/");
+
+
+        WebDriver driver = null;
+        try {
+            driver = new RemoteWebDriver(new URL("http://192.168.0.102/"), capabilities);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
 
         return (ChromeDriver) driver;
     }

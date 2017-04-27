@@ -26,7 +26,8 @@ public class FormGlue {
 		driver.findElement(By.id("email")).sendKeys(email);
 		driver.findElement(By.id("subject")).sendKeys(subject);
 		driver.findElement(By.id("message")).sendKeys(message);
-	}
+
+    }
 
 	@When("^click submit button$")
 	public void click_submit_button() throws Throwable {

@@ -10,4 +10,4 @@ Feature: Basic test
  		
 	Examples:
 	| url | name  | email 			| subject | message |
-	| 192.168.50.43  | dummy | mail@mail.com 	| dummy	  | message	|
+	| 192.168.0.102  | dummy | mail@mail.com 	| dummy	  | message	|

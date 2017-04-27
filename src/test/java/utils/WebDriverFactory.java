@@ -1,7 +1,5 @@
 package utils;
 
-import java.io.File;
-
 import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +9,10 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.io.File;
+import java.net.URL;
 
 public class WebDriverFactory {
 	
@@ -47,8 +49,9 @@ public class WebDriverFactory {
     	options.addArguments("--start-maximized");
     	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
     	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-    	
-        return new ChromeDriver(capabilities);
+        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102/"), capabilities);
+
+        return (ChromeDriver) driver;
     }
 
     private WebDriver createFirefoxDriver(){
